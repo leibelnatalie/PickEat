@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">PickEat</string>
 
+    <!--Main Screen-->
     <string name="main_title_text">Hungry and don\'t know what to eat?</string>
-<string name="main_description_text">Thats why we are here! Just hit the button and we \n find you exactly what you want! \n What your waiting for? Click it!</string>
+    <string name="main_description_text">Thats why we are here! Just hit the button and we \n find you exactly what you want! \n What your waiting for? Click it!</string>
+    <string name="main_pickeat_text">PickEat</string>
+    <string name="main_advanced_settings_text">Advanced \n Settings</string>
+
+    <!--Content Description Texts-->
+    <string name="advanced_settings_button">Advanced settings button</string>
+    <string name="pick_eat_main_circle">Pick Eat Main Circle</string>
+
+
 </resources>

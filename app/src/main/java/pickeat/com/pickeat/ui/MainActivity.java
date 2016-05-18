@@ -1,9 +1,11 @@
-package pickeat.com.pickeat;
+package pickeat.com.pickeat.ui;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import pickeat.com.pickeat.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     mDescriptionText = (TextView) findViewById(R.id.main_desc_text);
 
     mPickEat = (ImageView) findViewById(R.id.main_pick_eat);
-    mAdvancedSettings = (ImageView) findViewById(R.id.main_advanced_settings);
+    mAdvancedSettings = (ImageView) findViewById(R.id.main_advanced_settings_image);
   }
 
 }
