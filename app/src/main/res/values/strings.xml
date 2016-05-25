@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">PickEat</string>
 
+    <!--Toolbar Titles-->
+    <string name="toolbar_mainscreen_title">PickEat</string>
+
     <!--Main Screen-->
     <string name="main_title_text">Hungry and don\'t know what to eat?</string>
     <string name="main_description_text">Thats why we are here! Just hit the button and we \n find you exactly what you want! \n What your waiting for? Click it!</string>
