@@ -13,6 +13,12 @@
     <!--Content Description Texts-->
     <string name="advanced_settings_button">Advanced settings button</string>
     <string name="pick_eat_main_circle">Pick Eat Main Circle</string>
+    <string name="advanced_settings_title">
+        So\, it\'s dinner time, and once again you have no idea what to eat? \n This is the reason we are here!
+    </string>
+    <string name="advanced_settings_desc"> Answer this question and within minutes \n you\'ll be cooking your dinner! </string>
+
+    <string name="advanced_btn_txt">Let\'s Start</string>
 
 
 </resources>
