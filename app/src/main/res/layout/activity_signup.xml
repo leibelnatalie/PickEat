@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.SignupActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_splash"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/signup_logo_top_margin"
+        android:scaleType="centerCrop"
+        android:src="@drawable/l_o_g_o"/>
+
+    <LinearLayout
+        android:id="@+id/signup_google_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/signup_google_btn_height"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/signup_google_side_margin"
+        android:layout_marginEnd="@dimen/signup_google_side_margin"
+        android:background="@drawable/signup_google_button"
+        android:layout_marginBottom="@dimen/signup_bottom_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_google"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign In with Google"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
