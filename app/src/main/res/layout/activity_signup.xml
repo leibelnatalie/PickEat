@@ -29,7 +29,7 @@
         android:gravity="center"
         android:layout_marginStart="@dimen/signup_google_side_margin"
         android:layout_marginEnd="@dimen/signup_google_side_margin"
-        android:background="@drawable/signup_google_button"
+        android:background="@drawable/signup_google_selector"
         android:layout_marginBottom="@dimen/signup_bottom_margin">
 
         <ImageView

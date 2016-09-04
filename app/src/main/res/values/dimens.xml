@@ -12,4 +12,8 @@
     <dimen name="signup_bottom_margin">66dp</dimen>
     <dimen name="signup_google_side_margin">26dp</dimen>
     <dimen name="signup_google_btn_height">45dp</dimen>
+    <dimen name="splash_logo_top_margin">78dp</dimen>
+    <dimen name="splash_checkmarks_logo_spacing">28dp</dimen>
+    <dimen name="splash_checkmarks_left_margin">22dp</dimen>
+    <dimen name="signup_radius_corners">25dp</dimen>
 </resources>

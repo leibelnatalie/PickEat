@@ -1,90 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:id="@+id/activity_layout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.activities.MainActivity">
 
-    <include layout="@layout/transparent_toolbar" />
-
-    <TextView
-        android:id="@+id/main_title_text"
-        style="@style/TitleText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:text="@string/main_title_text"
-        android:layout_below="@+id/toolbar_layout"
-        android:layout_centerHorizontal="true"/>
-
-    <TextView
-        android:id="@+id/main_desc_text"
-        style="@style/DescriptionText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginTop="8dp"
-        android:text="@string/main_description_text"
-        android:layout_below="@+id/main_title_text"
-        android:layout_centerHorizontal="true"/>
+    <!--android:background="@drawable/bg_main"-->
+    <!--<include layout="@layout/transparent_toolbar" />-->
 
     <RelativeLayout
-        android:id="@+id/main_pick_eat_layout"
-        android:layout_width="240dp"
-        android:layout_height="240dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true">
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            app:contentInsetStart="0dp"
+            android:background="@color/blueWhale"
+            android:layout_width="match_parent"
+            android:layout_height="56dp">
+
+            <ImageView
+                android:id="@+id/content_hamburger"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/ic_menu" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/colorWhite"
+                android:text="PickEat"
+                android:textSize="25sp" />
+        </android.support.v7.widget.Toolbar>
 
         <ImageView
-            android:id="@+id/main_pick_eat"
-            android:src="@drawable/circle_shape"
-            android:layout_width="240dp"
-            android:layout_height="240dp"
-            android:scaleType="fitCenter"
-            android:contentDescription="@string/pick_eat_main_circle"
-            />
-
-        <TextView
-            android:id="@+id/main_pick_eat_text"
-            android:textSize="40sp"
-            android:textColor="@color/colorWhite"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/main_pickeat_text"/>
-
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:id="@+id/main_advanced_layout"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_alignBottom="@+id/main_pick_eat_layout"
-        android:layout_marginLeft="35dp">
-
-        <ImageView
-            android:id="@+id/main_advanced_settings_image"
-            android:src="@drawable/btn_main_small"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:scaleType="fitCenter"
-            android:contentDescription="@string/advanced_settings_button"/>
-
-        <TextView
-            android:id="@+id/main_advanced_settings_text"
-            android:textSize="13sp"
-            android:textColor="@color/colorOrange"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="@string/main_advanced_settings_text"/>
+            android:scaleType="centerCrop"
+            android:layout_below="@id/toolbar"
+            android:src="@drawable/bg_home"/>
 
     </RelativeLayout>
 
 
-</RelativeLayout>
+
+    <!--<TextView-->
+        <!--android:id="@+id/main_title_text"-->
+        <!--style="@style/TitleText"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_marginTop="@dimen/activity_vertical_margin"-->
+        <!--android:text="@string/main_title_text"-->
+        <!--android:layout_below="@+id/toolbar_layout"-->
+        <!--android:layout_centerHorizontal="true"/>-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/main_desc_text"-->
+        <!--style="@style/DescriptionText"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:gravity="center"-->
+        <!--android:layout_marginTop="8dp"-->
+        <!--android:text="@string/main_description_text"-->
+        <!--android:layout_below="@+id/main_title_text"-->
+        <!--android:layout_centerHorizontal="true"/>-->
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/main_pick_eat_layout"-->
+        <!--android:layout_width="240dp"-->
+        <!--android:layout_height="240dp"-->
+        <!--android:layout_centerVertical="true"-->
+        <!--android:layout_centerHorizontal="true">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/main_pick_eat"-->
+            <!--android:src="@drawable/circle_shape"-->
+            <!--android:layout_width="240dp"-->
+            <!--android:layout_height="240dp"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:contentDescription="@string/pick_eat_main_circle"-->
+            <!--/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/main_pick_eat_text"-->
+            <!--android:textSize="40sp"-->
+            <!--android:textColor="@color/colorWhite"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:text="@string/main_pickeat_text"/>-->
+
+    <!--</RelativeLayout>-->
+
+    <!--<RelativeLayout-->
+        <!--android:id="@+id/main_advanced_layout"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_alignBottom="@+id/main_pick_eat_layout"-->
+        <!--android:layout_marginLeft="35dp">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/main_advanced_settings_image"-->
+            <!--android:src="@drawable/btn_main_small"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:scaleType="fitCenter"-->
+            <!--android:contentDescription="@string/advanced_settings_button"/>-->
+
+        <!--<TextView-->
+            <!--android:id="@+id/main_advanced_settings_text"-->
+            <!--android:textSize="13sp"-->
+            <!--android:textColor="@color/colorOrange"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:text="@string/main_advanced_settings_text"/>-->
+
+    <!--</RelativeLayout>-->
+
+
+</FrameLayout>

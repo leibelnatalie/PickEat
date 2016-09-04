@@ -1,5 +1,6 @@
 package pickeat.com.pickeat.ui.activities;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +37,15 @@ public class SignupActivity extends AppCompatActivity implements GoogleApiClient
 
   private static final String TAG = SignupActivity.class.getSimpleName();
 
+  public static Intent getIntent(Context context, boolean newTask) {
+    Intent intent = new Intent(context, SignupActivity.class);
+    if (newTask) {
+      intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+      intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
+    return intent;
+  }
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -55,10 +65,11 @@ public class SignupActivity extends AppCompatActivity implements GoogleApiClient
       @Override
       public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
         FirebaseUser user = firebaseAuth.getCurrentUser();
-        if (user != null) {
+        if (user != null && !SharedPref.isSigned()) {
           // User is signed in
           Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
           saveUser(user);
+          startActivity(MainActivity.getIntent(SignupActivity.this, true));
         } else {
           // User is signed out
           Log.d(TAG, "onAuthStateChanged:signed_out");

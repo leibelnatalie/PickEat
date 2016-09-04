@@ -19,13 +19,13 @@
         <activity android:name=".ui.activities.AdvancedSettings">
         </activity>
         <activity android:name=".ui.activities.SplashScreen">
-        </activity>
-        <activity android:name=".ui.activities.SignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity android:name=".ui.activities.SignupActivity">
         </activity>
     </application>
 

@@ -18,5 +18,28 @@
         <item name="android:textSize">@dimen/desc_text_size</item>
     </style>
 
+    <style name="guillotineItemLayout">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center|left</item>
+    </style>
+
+    <style name="guillotineImageView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">76dp</item>
+    </style>
+
+    <style name="guillotineTextView">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+    </style>
+
 
 </resources>
