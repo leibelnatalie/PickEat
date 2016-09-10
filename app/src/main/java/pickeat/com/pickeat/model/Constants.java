@@ -12,4 +12,12 @@ public class Constants {
   public static final String SP_DISPLAY_NAME = "displayName";
   public static final String SP_EMAIL = "email";
 
+  //Firebase Constants Start
+  public static final String FIRE_QUESTIONS = "Questions";
+
+  //Categories
+  public static final String FIRE_FOOD_TYPE = "FoodType";
+  public static final String FIRE_MEAT = "Meat";
+  public static final String FIRE_TIME = "Time";
+  //Firebase Constants End
 }

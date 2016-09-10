@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/colorPrimaryDark"
+    tools:context="pickeat.com.pickeat.ui.activities.PickEatExperience">
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+    <LinearLayout
+        android:id="@+id/questions_progress"
+        android:orientation="vertical"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/toolbar_height"
+        android:layout_marginEnd="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/progress_one"
+            android:layout_width="@dimen/progress_size"
+            android:layout_height="@dimen/progress_size"
+            android:background="@drawable/circle_white_shape"/>
+
+        <View
+            android:id="@+id/progress_two"
+            android:layout_width="@dimen/progress_size"
+            android:layout_height="@dimen/progress_size"
+            android:layout_marginTop="@dimen/progress_top_spacing"
+            android:background="@drawable/circle_gray_shape"/>
+
+        <View
+            android:id="@+id/progress_three"
+            android:layout_width="@dimen/progress_size"
+            android:layout_height="@dimen/progress_size"
+            android:layout_marginTop="@dimen/progress_top_spacing"
+            android:background="@drawable/circle_gray_shape"/>
+
+        <View
+            android:id="@+id/progress_four"
+            android:layout_width="@dimen/progress_size"
+            android:layout_height="@dimen/progress_size"
+            android:layout_marginTop="@dimen/progress_top_spacing"
+            android:background="@drawable/circle_gray_shape"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

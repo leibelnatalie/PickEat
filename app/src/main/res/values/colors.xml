@@ -5,6 +5,8 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorWhite">#FFFFFF</color>
+    <color name="whiteOpacity20">#33FFFFFF</color>
+    <color name="colorQuestionTextBlack">#4A4A4A</color>
     <color name="colorGray">#DCDCDC</color>
     <color name="colorOrange">#F5A623</color>
     <color name="colorTransparent">#00FFFFFF</color>

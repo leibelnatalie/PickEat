@@ -18,6 +18,33 @@
         <item name="android:textSize">@dimen/desc_text_size</item>
     </style>
 
+    <style name="questionTitle">
+        <item name="android:textSize">@dimen/question_title_size</item>
+        <item name="android:textColor">@color/colorWhite</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="questionMessage">
+        <item name="android:textSize">@dimen/question_message_size</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="optionalAddIngredients">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingStart">15dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:text">@string/add_ingredients</item>
+        <item name="android:textSize">@dimen/optional_add_ingredients</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="questionText" parent="optionalAddIngredients">
+        <item name="android:text">@string/question_text</item>
+        <item name="android:textColor">@color/colorQuestionTextBlack</item>
+    </style>
+
     <style name="guillotineItemLayout">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>

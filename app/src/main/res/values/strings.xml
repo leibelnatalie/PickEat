@@ -21,6 +21,20 @@
     <string name="advanced_settings_desc"> Answer this question and within minutes \n you\'ll be cooking your dinner! </string>
 
     <string name="advanced_btn_txt">Let\'s Start</string>
+    <string name="pickeat_experience">PickEat Experience</string>
+    <string name="quickpick">QuickPick</string>
+    <string name="sign_in_with_google">Sign In with Google</string>
+
+    <!--Optional Question Fragment-->
+    <string name="ingredients_question">Do you want to make \nfood from ingredients \nyou have at home?</string>
+    <string name="ingredients_message">You can skip this level if you want</string>
+    <string name="add_ingredients">Add Ingredients</string>
+    <string name="optional_skip">SKIP</string>
+
+    <string name="question_text">Question Text</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>

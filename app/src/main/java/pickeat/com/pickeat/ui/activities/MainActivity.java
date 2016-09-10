@@ -9,20 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 
 import com.yalantis.guillotine.animation.GuillotineAnimation;
 
 import pickeat.com.pickeat.R;
 
-public class MainActivity extends AppCompatActivity {
-
-//  private ImageView mToolbarIcon;
-//  private TextView mToolbarTitle;
-//
-//  private TextView mTitleText, mDescriptionText;
-//  private ImageView mPickEat, mAdvancedSettings;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
   private static final long RIPPLE_DURATION = 300;
 
@@ -45,16 +37,14 @@ public class MainActivity extends AppCompatActivity {
 
   private void initViews() {
 
-//    mTitleText = (TextView) findViewById(R.id.main_title_text);
-//    mDescriptionText = (TextView) findViewById(R.id.main_desc_text);
-//    mPickEat = (ImageView) findViewById(R.id.main_pick_eat);
-//    mAdvancedSettings = (ImageView) findViewById(R.id.main_advanced_settings_image);
+    findViewById(R.id.main_pickeat_btn).setOnClickListener(this);
+    findViewById(R.id.main_quickpick_btn).setOnClickListener(this);
 
     FrameLayout root = (FrameLayout) findViewById(R.id.activity_layout);
 
     ImageView contentHamburger = (ImageView) findViewById(R.id.content_hamburger);
 
-    Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+    Toolbar toolbar = (Toolbar) findViewById(R.id.main_toolbar);
     if (toolbar != null) {
       setSupportActionBar(toolbar);
       getSupportActionBar().setTitle(null);
@@ -71,4 +61,14 @@ public class MainActivity extends AppCompatActivity {
 
   }
 
+  @Override
+  public void onClick(View v) {
+    switch (v.getId()) {
+      case R.id.main_pickeat_btn:
+        startActivity(PickEatExperience.getIntent(MainActivity.this));
+        break;
+      case R.id.main_quickpick_btn:
+        break;
+    }
+  }
 }

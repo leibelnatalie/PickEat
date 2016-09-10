@@ -16,4 +16,11 @@
     <dimen name="splash_checkmarks_logo_spacing">28dp</dimen>
     <dimen name="splash_checkmarks_left_margin">22dp</dimen>
     <dimen name="signup_radius_corners">25dp</dimen>
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="question_title_size">24sp</dimen>
+    <dimen name="question_message_size">18sp</dimen>
+    <dimen name="optional_add_ingredients">14sp</dimen>
+    <dimen name="question_side_padding">20dp</dimen>
+    <dimen name="progress_size">12dp</dimen>
+    <dimen name="progress_top_spacing">8dp</dimen>
 </resources>

@@ -1,0 +1,131 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             tools:context="pickeat.com.pickeat.ui.fragments.QuestionOptional">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_q_1"
+        android:scaleType="centerCrop"/>
+    
+    <RelativeLayout
+        android:id="@+id/like_a_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height">
+        
+        <ImageView
+            android:id="@+id/optional_back"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/back_ico"/>
+
+        <TextView
+            android:id="@+id/optional_skip"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="@string/optional_skip"
+            android:textSize="16sp"
+            android:textColor="@color/colorWhite"/>
+        
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingEnd="@dimen/question_side_padding"
+        android:paddingStart="@dimen/question_side_padding">
+
+        <TextView
+            android:id="@+id/question_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/questionTitle"
+            android:layout_centerVertical="true"
+            android:paddingStart="0dp"
+            android:paddingEnd="63dp"
+            android:text="@string/ingredients_question"/>
+
+        <TextView
+            android:id="@+id/question_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_title"
+            style="@style/questionMessage"
+            android:layout_marginTop="8dp"
+            android:text="@string/ingredients_message"/>
+
+        <RelativeLayout
+            android:id="@+id/optional_ingredient_1"
+            android:layout_marginTop="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/optional_add_ingredients"
+            android:layout_below="@+id/question_text">
+
+            <TextView
+                android:id="@+id/optional_text_1"
+                style="@style/optionalAddIngredients"/>
+
+            <ImageView
+                android:id="@+id/optional_image_1"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_plus"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/optional_ingredient_2"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/optional_add_ingredients"
+            android:layout_below="@+id/optional_ingredient_1">
+
+            <TextView
+                android:id="@+id/optional_text_2"
+                style="@style/optionalAddIngredients"/>
+
+            <ImageView
+                android:id="@+id/optional_image_2"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_plus"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/optional_ingredient_3"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@drawable/optional_add_ingredients"
+            android:layout_below="@+id/optional_ingredient_2">
+
+            <TextView
+                android:id="@+id/optional_text_3"
+                style="@style/optionalAddIngredients"/>
+
+            <ImageView
+                android:id="@+id/optional_image_3"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_plus"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</FrameLayout>
