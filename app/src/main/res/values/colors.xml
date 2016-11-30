@@ -11,6 +11,9 @@
     <color name="colorOrange">#F5A623</color>
     <color name="colorTransparent">#00FFFFFF</color>
     <color name="blueWhale">#0B2F4A</color>
+    <color name="nataliesWierdDarkBlue">#041d31</color>
+    <color name="orangePickEatBtn">#fcb627</color>
+
 
     <color name="signupOpacityWhite">#B3FFFFFF</color>
     <color name="signupOpacityGray">#B3E5E5E5</color>

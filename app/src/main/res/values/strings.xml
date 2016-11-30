@@ -12,7 +12,7 @@
 
     <!--Content Description Texts-->
     <string name="advanced_settings_button">Advanced settings button</string>
-    <string name="pick_eat_main_circle">Pick Eat Main Circle</string>
+    <string name="pick_eat_main_circle">PickEat Main Circle</string>
     <string name="google_signin_failed">Google Sign In has Failed.</string>
 
     <string name="advanced_settings_title">
@@ -21,8 +21,8 @@
     <string name="advanced_settings_desc"> Answer this question and within minutes \n you\'ll be cooking your dinner! </string>
 
     <string name="advanced_btn_txt">Let\'s Start</string>
-    <string name="pickeat_experience">PickEat Experience</string>
-    <string name="quickpick">QuickPick</string>
+    <string name="pickeat_experience">Pick Eat Experience</string>
+    <string name="quickpick">Quick Pick</string>
     <string name="sign_in_with_google">Sign In with Google</string>
 
     <!--Optional Question Fragment-->
@@ -35,6 +35,10 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="main_screen_title">Hi Stranger!</string>
+    <string name="main_screen_message">Let me guess, you\'re\nout of ideas again.\n\nLet PickEat find them\nfor you!</string>
 
 
 </resources>

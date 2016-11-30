@@ -14,6 +14,7 @@ public class Constants {
 
   //Firebase Constants Start
   public static final String FIRE_QUESTIONS = "Questions";
+  public static final String FIRE_QUESTIONS_VERSION = "QuestionVersion";
 
   //Categories
   public static final String FIRE_FOOD_TYPE = "FoodType";

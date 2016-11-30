@@ -38,14 +38,11 @@ public class RealmCategory extends RealmObject {
   }
 
   private static void writeNewCategory(final Realm realm, final String categoryName, final RealmList<RealmQuestion> questions) {
-    realm.executeTransactionAsync(new Realm.Transaction() {
-      @Override
-      public void execute(Realm realm) {
-        RealmCategory category = realm.createObject(RealmCategory.class);
-        category.setCategoryName(categoryName);
-        category.setQuestions(questions);
-      }
-    });
+    realm.beginTransaction();
+    RealmCategory category = realm.createObject(RealmCategory.class);
+    category.setCategoryName(categoryName);
+    category.setQuestions(questions);
+    realm.commitTransaction();
   }
 
   public static void deleteAllCategories(Realm realm) {
@@ -53,22 +50,27 @@ public class RealmCategory extends RealmObject {
     realm.beginTransaction();
     results.deleteAllFromRealm();
     realm.commitTransaction();
+
+    final RealmResults<RealmQuestion> results1 = realm.where(RealmQuestion.class).findAll();
+    realm.beginTransaction();
+    results1.deleteAllFromRealm();
+    realm.commitTransaction();
+
+    final RealmResults<RealmAnswer> results2 = realm.where(RealmAnswer.class).findAll();
+    realm.beginTransaction();
+    results2.deleteAllFromRealm();
+    realm.commitTransaction();
   }
 
-  public static void saveCategory(Realm realm, String categoryName, Map<String, Question> questionsMap) {
+  public static void saveCategory(Realm realm, String categoryName, ArrayList<Question> questionsMap) {
 
-    //TODO - WTF IS THIS SHIT ?!
-//    RealmList<RealmQuestion> realmQuestions = new RealmList<>();
-//    Set<String> stringSet = questionsMap.keySet();
-//    Iterator<String> iterator = stringSet.iterator();
-//
-//    while (iterator.hasNext()) {
-//      String key = iterator.next();
-//      HashMap<String, Question> question = questionsMap.get(key);
-//      RealmQuestion realmQuestion = new RealmQuestion(question);
-//      realmQuestions.add(realmQuestion);
-//    }
-//
-//    writeNewCategory(realm, categoryName, realmQuestions);
+    RealmList<RealmQuestion> realmQuestions = new RealmList<>();
+
+    for (Question question : questionsMap) {
+      RealmQuestion realmQuestion = RealmQuestion.writeNewQuestion(realm, question);
+      realmQuestions.add(realmQuestion);
+    }
+
+    writeNewCategory(realm, categoryName, realmQuestions);
   }
 }

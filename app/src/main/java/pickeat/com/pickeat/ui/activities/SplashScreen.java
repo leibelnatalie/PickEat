@@ -2,33 +2,13 @@ package pickeat.com.pickeat.ui.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.Log;
-
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.GenericTypeIndicator;
-import com.google.firebase.database.ValueEventListener;
-
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
 import java.util.Timer;
 import java.util.TimerTask;
 
-import io.realm.Realm;
 import pickeat.com.pickeat.R;
 import pickeat.com.pickeat.business.SharedPref;
-import pickeat.com.pickeat.model.Constants;
-import pickeat.com.pickeat.model.firebase.CategoryQuestions;
-import pickeat.com.pickeat.model.firebase.Question;
-import pickeat.com.pickeat.model.realm.RealmCategory;
+import pickeat.com.pickeat.business.firebase.FirebaseUtil;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -58,32 +38,7 @@ public class SplashScreen extends AppCompatActivity {
   }
 
   private void fetchData() {
-    DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-    mDatabase.addListenerForSingleValueEvent(
-        new ValueEventListener() {
-          @Override
-          public void onDataChange(DataSnapshot dataSnapshot) {
-
-            final Realm realm = Realm.getDefaultInstance();
-
-            //TODO - WTF ?
-//            Iterator<DataSnapshot> snap = dataSnapshot.child(Constants.FIRE_QUESTIONS).getChildren().iterator();
-//            while (snap.hasNext()) {
-//              DataSnapshot dataSnapshot1 = snap.next();
-//              String categoryName = dataSnapshot1.getKey();
-//              Map<String, Question> questionsMap = (Map<String, Question>) dataSnapshot1.getValue();
-//              RealmCategory.saveCategory(realm, categoryName, questionsMap);
-//            }
-
-//            Map<String, Question> objectMap = (Map<String, Question>) dataSnapshot.child(Constants.FIRE_QUESTIONS).child(Constants.FIRE_FOOD_TYPE).getValue();
-          }
-
-          @Override
-          public void onCancelled(DatabaseError databaseError) {
-            Log.w("blabla ", "getUser:onCancelled", databaseError.toException());
-            // ...
-          }
-        });
+    FirebaseUtil.checkQuestionsVersion();
   }
 
   private void navigateToMainscreen() {

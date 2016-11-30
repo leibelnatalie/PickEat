@@ -39,4 +39,12 @@ public class SharedPref {
     return mSharedPreferences.getString(Constants.SP_EMAIL, "");
   }
 
+  public static void saveQuestionVersion(int version) {
+    mSharedPreferences.edit().putInt(Constants.FIRE_QUESTIONS_VERSION, version).apply();
+  }
+
+  public static int getQuestionVersion() {
+    return mSharedPreferences.getInt(Constants.FIRE_QUESTIONS_VERSION, 0);
+  }
+
 }

@@ -10,6 +10,7 @@ import java.util.HashMap;
 @IgnoreExtraProperties
 public class Question {
 
+  private String key;
   private String question;
   private String image;
   private Answer answer1;
@@ -21,13 +22,12 @@ public class Question {
     // Default constructor required for calls to DataSnapshot.getValue(User.class)
   }
 
-  public Question(String question, String image, Answer answer1, Answer answer2, Answer answer3, Answer answer4) {
-    this.question = question;
-    this.image = image;
-    this.answer1 = answer1;
-    this.answer2 = answer2;
-    this.answer3 = answer3;
-    this.answer4 = answer4;
+  public String getKey() {
+    return key;
+  }
+
+  public void setKey(String key) {
+    this.key = key;
   }
 
   public String getQuestion() {

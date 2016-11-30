@@ -1,5 +1,6 @@
 package pickeat.com.pickeat.model.realm;
 
+import io.realm.Realm;
 import io.realm.RealmObject;
 import pickeat.com.pickeat.model.firebase.Answer;
 
@@ -9,14 +10,10 @@ import pickeat.com.pickeat.model.firebase.Answer;
 public class RealmAnswer extends RealmObject {
 
   private String answer;
-  private String type;
+  private String leadTo;
+  private String tags;
 
   public RealmAnswer() {
-  }
-
-  public RealmAnswer(Answer answer) {
-    this.answer = answer.getAnswer();
-    this.type = answer.getType();
   }
 
   public String getAnswer() {
@@ -27,11 +24,48 @@ public class RealmAnswer extends RealmObject {
     this.answer = answer;
   }
 
-  public String getType() {
-    return type;
+  public String getLeadTo() {
+    return leadTo;
   }
 
-  public void setType(String type) {
-    this.type = type;
+  public void setLeadTo(String leadTo) {
+    this.leadTo = leadTo;
+  }
+
+  public String getTags() {
+    return tags;
+  }
+
+  public void setTags(String tags) {
+    this.tags = tags;
+  }
+
+  public static RealmAnswer writeNewAnswer(Realm realm, Answer answer) {
+
+//    RealmList<RealmTag> realmTags = new RealmList<>();
+//    if (answer.getTags() != null && !answer.getTags().isEmpty()) {
+//      Iterator<Map.Entry<String, String>> iterator = answer.getTags().entrySet().iterator();
+//      while (iterator.hasNext()) {
+//        String tag = iterator.next().getValue();
+//        realmTags.add(RealmTag.writeNewTag(realm, tag));
+//        iterator.remove();
+//      }
+//      for (Tag tag : answer.getTags()) {
+//        realmTags.add(RealmTag.writeNewTag(realm, tag.getTag()));
+//      }
+//    }
+
+    realm.beginTransaction();
+    RealmAnswer realmAnswer = realm.createObject(RealmAnswer.class);
+    realmAnswer.setAnswer(answer.getAnswer());
+    if (answer.getLeadTo() != null) {
+      realmAnswer.setLeadTo(answer.getLeadTo());
+    }
+    if (answer.getTags() != null) {
+      realmAnswer.setTags(answer.getTags());
+    }
+    realm.commitTransaction();
+
+    return realmAnswer;
   }
 }

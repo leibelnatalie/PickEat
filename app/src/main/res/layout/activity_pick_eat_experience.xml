@@ -8,6 +8,12 @@
     tools:background="@color/colorPrimaryDark"
     tools:context="pickeat.com.pickeat.ui.activities.PickEatExperience">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/bg_q_1"
+        android:scaleType="centerCrop"/>
+
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"

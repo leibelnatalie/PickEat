@@ -1,5 +1,7 @@
 package pickeat.com.pickeat.model.realm;
 
+import io.realm.Realm;
+import io.realm.RealmList;
 import io.realm.RealmObject;
 import pickeat.com.pickeat.model.firebase.Question;
 
@@ -8,6 +10,7 @@ import pickeat.com.pickeat.model.firebase.Question;
  */
 public class RealmQuestion extends RealmObject {
 
+  private String key;
   private String question;
   private String image;
   private RealmAnswer answer1;
@@ -18,13 +21,12 @@ public class RealmQuestion extends RealmObject {
   public RealmQuestion() {
   }
 
-  public RealmQuestion(Question question) {
-    this.question = question.getQuestion();
-    this.image = question.getImage();
-    this.answer1 = new RealmAnswer(question.getAnswer1());
-    this.answer2 = new RealmAnswer(question.getAnswer2());
-    this.answer3 = new RealmAnswer(question.getAnswer3());
-    this.answer4 = new RealmAnswer(question.getAnswer4());
+  public String getKey() {
+    return key;
+  }
+
+  public void setKey(String key) {
+    this.key = key;
   }
 
   public String getQuestion() {
@@ -73,5 +75,41 @@ public class RealmQuestion extends RealmObject {
 
   public void setAnswer4(RealmAnswer answer4) {
     this.answer4 = answer4;
+  }
+
+  public static RealmQuestion writeNewQuestion(final Realm realm, Question question) {
+
+    RealmAnswer answer1 = RealmAnswer.writeNewAnswer(realm, question.getAnswer1());
+    RealmAnswer answer2 = RealmAnswer.writeNewAnswer(realm, question.getAnswer2());
+    RealmAnswer answer3 = RealmAnswer.writeNewAnswer(realm, question.getAnswer3());
+    RealmAnswer answer4 = RealmAnswer.writeNewAnswer(realm, question.getAnswer4());
+
+    realm.beginTransaction();
+    RealmQuestion realmQuestion = realm.createObject(RealmQuestion.class);
+    realmQuestion.setKey(question.getKey());
+    realmQuestion.setQuestion(question.getQuestion());
+    realmQuestion.setImage(question.getImage());
+    realmQuestion.setAnswer1(answer1);
+    realmQuestion.setAnswer2(answer2);
+    realmQuestion.setAnswer3(answer3);
+    realmQuestion.setAnswer4(answer4);
+    realm.commitTransaction();
+
+    return realmQuestion;
+  }
+
+  public static String getLeadToQuestionString(RealmQuestion question, int answerNum) {
+    switch (answerNum) {
+      case 1:
+        return question.getAnswer1().getLeadTo();
+      case 2:
+        return question.getAnswer2().getLeadTo();
+      case 3:
+        return question.getAnswer3().getLeadTo();
+      case 4:
+        return question.getAnswer4().getLeadTo();
+      default:
+        return question.getAnswer1().getLeadTo();
+    }
   }
 }

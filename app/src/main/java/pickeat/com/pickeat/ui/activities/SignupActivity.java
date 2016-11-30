@@ -25,6 +25,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 import pickeat.com.pickeat.R;
 import pickeat.com.pickeat.business.SharedPref;
+import pickeat.com.pickeat.business.firebase.FirebaseUtil;
 import pickeat.com.pickeat.model.Constants;
 
 public class SignupActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, View.OnClickListener {
@@ -69,6 +70,7 @@ public class SignupActivity extends AppCompatActivity implements GoogleApiClient
           // User is signed in
           Log.d(TAG, "onAuthStateChanged:signed_in:" + user.getUid());
           saveUser(user);
+          FirebaseUtil.checkQuestionsVersion();
           startActivity(MainActivity.getIntent(SignupActivity.this, true));
         } else {
           // User is signed out

@@ -33,8 +33,9 @@
             android:name=".ui.activities.SignupActivity"
             android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".ui.activities.PickEatExperience"
-                  android:screenOrientation="portrait">
+        <activity
+            android:name=".ui.activities.PickEatExperience"
+            android:screenOrientation="portrait">
         </activity>
     </application>
 
